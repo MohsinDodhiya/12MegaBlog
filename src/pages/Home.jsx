@@ -4,13 +4,13 @@ import service from "../appwrite/database";
 import { useSelector } from "react-redux";
 
 function Home() {
-  const deleteImg = async () => {
-    try {
-      await service.clearAllStorage(); // Wait for the async operation to complete
-    } catch (error) {
-      console.log("Error deleting images: ", error);
-    }
-  };
+  // const deleteImg = async () => {
+  //   try {
+  //     await service.clearAllStorage(); // Wait for the async operation to complete
+  //   } catch (error) {
+  //     console.log("Error deleting images: ", error);
+  //   }
+  // };
 
   const [posts, setPosts] = useState([]);
   const authStatus = useSelector((state) => state.auth?.status);
@@ -50,7 +50,7 @@ function Home() {
             </div>
           ))}
         </div>
-        <button onClick={deleteImg}>Delete all File / img</button>
+        {/* <button onClick={deleteImg}>Delete all File / img</button> */}
       </Container>
     </div>
   );

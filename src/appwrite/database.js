@@ -121,19 +121,19 @@ export class Services {
     return previewUrl.href;
   }
 
-  async clearAllStorage() {
-    try {
-      const allFiles = await this.storage.listFiles(conf.appwriteStorageId); // Make sure 'this.storage' is used correctly
-      const deletePromises = allFiles.files.map((file) =>
-        this.storage.deleteFile(conf.appwriteStorageId, file.$id)
-      );
+  // async clearAllStorage() {
+  //   try {
+  //     const allFiles = await this.storage.listFiles(conf.appwriteStorageId); 
+  //     const deletePromises = allFiles.files.map((file) =>
+  //       this.storage.deleteFile(conf.appwriteStorageId, file.$id)
+  //     );
 
-      await Promise.all(deletePromises);
-      console.log("All files deleted successfully.");
-    } catch (error) {
-      console.error("Failed to clear storage:", error);
-    }
-  }
+  //     await Promise.all(deletePromises);
+  //     console.log("All files deleted successfully.");
+  //   } catch (error) {
+  //     console.error("Failed to clear storage:", error);
+  //   }
+  // }
 }
 const service = new Services();
 
