@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         element: (
           <Protected authentication={false}>
             <Login />
-           </Protected>
+          </Protected>
         ),
       },
       {
@@ -79,4 +79,4 @@ createRoot(document.getElementById("root")).render(
       </RouterProvider>
     </Provider>
   </StrictMode>
-);  
+);
